@@ -26,13 +26,13 @@
     <param-value>oracle.jdbc.driver.OracleDriver</param-value>
   </context-param>
   <listener>
-    <listener-class>com.jpmc.listeners.DbListener</listener-class>
+    <listener-class>com.bookstore.listeners.DbListener</listener-class>
   </listener>
   <servlet>
     <description></description>
     <display-name>LoginServlet</display-name>
     <servlet-name>LoginServlet</servlet-name>
-    <servlet-class>com.jpmc.servlets.LoginServlet</servlet-class>
+    <servlet-class>com.bookstore.servlets.LoginServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>LoginServlet</servlet-name>
@@ -42,7 +42,7 @@
     <description></description>
     <display-name>LogoutServlet</display-name>
     <servlet-name>LogoutServlet</servlet-name>
-    <servlet-class>com.jpmc.servlets.LogoutServlet</servlet-class>
+    <servlet-class>com.bookstore.servlets.LogoutServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>LogoutServlet</servlet-name>
@@ -51,7 +51,7 @@
   <filter>
     <display-name>AuthenticationFilter</display-name>
     <filter-name>AuthenticationFilter</filter-name>
-    <filter-class>com.jpmc.filters.AuthenticationFilter</filter-class>
+    <filter-class>com.bookstore.filters.AuthenticationFilter</filter-class>
   </filter>
   <filter-mapping>
     <filter-name>AuthenticationFilter</filter-name>
@@ -66,7 +66,7 @@
     <description></description>
     <display-name>AdminServlet</display-name>
     <servlet-name>AdminServlet</servlet-name>
-    <servlet-class>com.jpmc.servlets.AdminServlet</servlet-class>
+    <servlet-class>com.bookstore.servlets.AdminServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>AdminServlet</servlet-name>
@@ -76,7 +76,7 @@
     <description></description>
     <display-name>CustomerServlet</display-name>
     <servlet-name>CustomerServlet</servlet-name>
-    <servlet-class>com.jpmc.servlets.CustomerServlet</servlet-class>
+    <servlet-class>com.bookstore.servlets.CustomerServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>CustomerServlet</servlet-name>

@@ -42,6 +42,12 @@ for(Cookie cookie : cookies){
  <form class="form-horizontal" action="LogoutServlet" method="post">
 <button type="submit" class="btn btn-light">Logout</button>
 </form>
+    <div class="col-sm-1">
+<hr>
+</div>
+ <form class="form-horizontal" action="CustomerServlet">
+<button type="submit" class="btn btn-light">Profile</button>
+</form>
 </nav>
 
 <!-- <form action="LogoutServlet" method="post">

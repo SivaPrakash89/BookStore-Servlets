@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.bookstore.bean.Address;
 import com.bookstore.bean.User;
 import com.bookstore.dao.interfaces.LoginDaoInterface;
 
@@ -35,5 +36,48 @@ public class LoginDao implements LoginDaoInterface {
 		}
 		return null;
 	}
+	@Override
+	public Address getAddress(String userId) {
+		String template = "select * from address where userid=?";
+		try {
+			Address address= null;
+			PreparedStatement statement = connection.prepareStatement(template);
+			statement.setString(1, userId);
+			ResultSet rs = statement.executeQuery();
+			while(rs.next()){
+				address = new Address(rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getLong(6));
+			}
+			return address;
+		}
+		catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	@Override
+	public Address updateAddress(String userId, String houseNo, String street, String area, String city, long pincode) {
+		String template = "update address set houseno=?, street=?, area=?, city=?, pincode=? where userid = ?";
+		try {
+			Address address = null;
+			PreparedStatement statement = connection.prepareStatement(template);
+			statement.setString(1, houseNo);
+			statement.setString(2, street);
+			statement.setString(3, area);
+			statement.setString(4, city);
+			statement.setLong(5,pincode);
+			statement.setString(6,userId);
+			if(statement.executeUpdate() == 1){
+				return getAddress(userId);
+			}
+		}
+		catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	
 
 }

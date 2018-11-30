@@ -8,6 +8,21 @@ public class Address implements Serializable{
 	private String area;
 	private String city;
 	private long pincode;
+	
+	public Address() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Address(String houseNo, String street, String area, String city, long pincode) {
+		super();
+		this.houseNo = houseNo;
+		this.street = street;
+		this.area = area;
+		this.city = city;
+		this.pincode = pincode;
+	}
+
 	public String getHouseNo() {
 		return houseNo;
 	}
